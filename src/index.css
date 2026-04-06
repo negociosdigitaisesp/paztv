@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  --color-paz-primary: #FF6B1A;
+  --color-paz-secondary: #D42B2B;
+  --color-paz-bg: #080808;
+  --color-paz-card: #111111;
+  --color-paz-alt: #141414;
+  --color-paz-text: #FFFFFF;
+  --color-paz-muted: #9A9A9A;
+  --color-paz-dark: #555555;
+  --color-paz-whatsapp: #25D366;
+  --color-paz-border: rgba(255, 107, 26, 0.15);
+}
+
+body {
+  background-color: var(--color-paz-bg);
+  color: var(--color-paz-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1.5s infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: perspective(1000px) rotateY(-8deg) translateY(0px); }
+  50% { transform: perspective(1000px) rotateY(-8deg) translateY(-12px); }
+}
+
+.animate-hero-float {
+  animation: heroFloat 5s ease-in-out infinite;
+}
+
+@keyframes scrollUpSlow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-200px); }
+}
+
+.animate-scroll-up-slow {
+  animation: scrollUpSlow 12s linear infinite;
+}
+
+@keyframes scrollDownSlow {
+  0% { transform: translateY(-200px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll-down-slow {
+  animation: scrollDownSlow 15s linear infinite;
+}
+
+@keyframes scrollUpMedium {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-160px); }
+}
+
+.animate-scroll-up-medium {
+  animation: scrollUpMedium 10s linear infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.animate-live-pulse {
+  animation: livePulse 1.2s infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
