@@ -52,7 +52,7 @@ export function Pricing() {
       {/* Bottom Dark Shape (Background for Cards) */}
       <div className="absolute top-[350px] md:top-[450px] bottom-0 left-1/2 -translate-x-1/2 w-[200%] md:w-[120%] bg-[#111111] rounded-t-[50%] shadow-[0_-20px_60px_rgba(255,107,26,0.2)] z-0"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 pt-[120px] md:pt-[180px]">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 pt-[60px] md:pt-[80px]">
         <div className="text-center mb-24">
           <span className="font-sans text-[11px] uppercase tracking-[2px] text-paz-primary font-bold block mb-2">
             PLANOS
