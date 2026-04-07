@@ -24,7 +24,7 @@ export default function App() {
         {/* ✦ CTA 1 — Após features: usuário viu o valor, hora de agir */}
         <div className="bg-[#0D0D0D] px-5 pb-16">
           <InlineCTA
-            headline="Tudo isso por menos de R$ 1 por dia"
+            headline="Tudo isso por menos do que você paga num único streaming"
             sub="6 horas de teste grátis · Sem cartão de crédito · Ativação imediata"
           />
         </div>
@@ -35,7 +35,7 @@ export default function App() {
         {/* ✦ CTA 2 — Após comparativo: usuário acabou de ver TV a cabo vs Paz TV */}
         <div className="bg-[#080808] px-5 pb-16">
           <InlineCTA
-            headline="Já convencido? Comece o teste agora"
+            headline="Cancele os streamings. Assine a Paz TV."
             sub="Sem fidelidade · Cancele quando quiser · Suporte 24h no WhatsApp"
           />
         </div>
@@ -47,8 +47,8 @@ export default function App() {
         {/* ✦ CTA 3 — Após prova social: pico de confiança → conversão */}
         <div className="bg-[#0D0D0D] px-5 pb-16">
           <InlineCTA
-            headline="Mais de 500 clientes satisfeitos. E você?"
-            sub="Junte-se à comunidade Paz TV — entretenimento sem complicação"
+            headline="Mais de 500 clientes que pararam de pagar caro. E você?"
+            sub="Junte-se à comunidade Paz TV — tudo em um, sem complicação"
           />
         </div>
 
