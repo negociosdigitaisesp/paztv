@@ -1,7 +1,27 @@
+const steps = [
+  {
+    number: '01',
+    title: 'Escolha seu Plano',
+    description: 'Selecione o período ideal para você',
+  },
+  {
+    number: '02',
+    title: 'Faça o Pagamento',
+    description: 'Pix, cartão ou boleto. 100% seguro',
+  },
+  {
+    number: '03',
+    title: 'Receba o Acesso',
+    description: 'Login e senha no WhatsApp em minutos',
+  },
+];
+
 export function HowItWorks() {
   return (
     <section id="como-funciona" className="bg-paz-alt py-[90px]">
       <div className="max-w-7xl mx-auto px-5">
+
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-[52px] leading-none text-white mb-2">
             COMO COMEÇAR
@@ -9,45 +29,29 @@ export function HowItWorks() {
           <p className="font-sans text-paz-muted">Ative em menos de 5 minutos</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 relative">
-          {/* Connector Line (Desktop only) */}
-          <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-transparent via-[rgba(255,107,26,0.3)] to-transparent"></div>
+        {/* Steps grid */}
+        <div className="grid md:grid-cols-3 gap-10 relative">
 
-          {/* Step 1 */}
-          <div className="relative text-center z-10">
-            <div className="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <span className="absolute font-display text-[72px] text-[rgba(255,107,26,0.15)] select-none">01</span>
-              <div className="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-paz-primary to-paz-secondary flex items-center justify-center relative z-10 shadow-[0_0_20px_rgba(255,107,26,0.3)]">
-                <span className="font-display text-[28px] text-white mt-1">1</span>
-              </div>
-            </div>
-            <h3 className="font-sans text-xl font-bold text-white mb-2">Escolha seu Plano</h3>
-            <p className="font-sans text-sm text-paz-muted">Selecione o período ideal para você</p>
-          </div>
+          {/* Connector Line — desktop only */}
+          <div className="hidden md:block absolute top-[36px] left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-[rgba(255,107,26,0.25)] to-transparent pointer-events-none" />
 
-          {/* Step 2 */}
-          <div className="relative text-center z-10">
-            <div className="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <span className="absolute font-display text-[72px] text-[rgba(255,107,26,0.15)] select-none">02</span>
-              <div className="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-paz-primary to-paz-secondary flex items-center justify-center relative z-10 shadow-[0_0_20px_rgba(255,107,26,0.3)]">
-                <span className="font-display text-[28px] text-white mt-1">2</span>
-              </div>
-            </div>
-            <h3 className="font-sans text-xl font-bold text-white mb-2">Faça o Pagamento</h3>
-            <p className="font-sans text-sm text-paz-muted">Pix, cartão ou boleto. 100% seguro</p>
-          </div>
+          {steps.map((step) => (
+            <div key={step.number} className="flex flex-col items-center text-center">
 
-          {/* Step 3 */}
-          <div className="relative text-center z-10">
-            <div className="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <span className="absolute font-display text-[72px] text-[rgba(255,107,26,0.15)] select-none">03</span>
-              <div className="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-paz-primary to-paz-secondary flex items-center justify-center relative z-10 shadow-[0_0_20px_rgba(255,107,26,0.3)]">
-                <span className="font-display text-[28px] text-white mt-1">3</span>
+              {/* Circle + number — everything self-contained, no absolute trickery */}
+              <div className="how-step-circle mb-6">
+                <span className="how-step-number">{step.number}</span>
               </div>
+
+              <h3 className="font-sans text-[20px] font-bold tracking-wide uppercase text-white mb-3">
+                {step.title}
+              </h3>
+              <p className="font-sans text-[15px] text-paz-muted leading-relaxed max-w-[200px]">
+                {step.description}
+              </p>
             </div>
-            <h3 className="font-sans text-xl font-bold text-white mb-2">Receba o Acesso</h3>
-            <p className="font-sans text-sm text-paz-muted">Login e senha no WhatsApp em minutos</p>
-          </div>
+          ))}
+
         </div>
       </div>
     </section>

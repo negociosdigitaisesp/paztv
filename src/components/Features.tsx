@@ -50,13 +50,13 @@ export function Features() {
           {features.map((feature, idx) => (
             <div 
               key={idx}
-              className="bg-paz-card border border-[rgba(255,107,26,0.12)] rounded-xl p-7 border-t-[3px] border-t-transparent hover:border-t-paz-primary hover:-translate-y-1 hover:border-[rgba(255,107,26,0.3)] transition-all duration-250 group"
+              className="bg-paz-card border border-[rgba(255,107,26,0.15)] rounded-xl p-7 border-t-[3px] border-t-paz-primary/40 hover:border-t-paz-primary hover:-translate-y-1 hover:border-[rgba(255,107,26,0.35)] transition-all duration-250 group"
             >
               <div className="mb-5">{feature.icon}</div>
-              <h3 className="font-sans text-[17px] font-extrabold text-white mb-2 group-hover:text-paz-primary transition-colors">
+              <h3 className="font-sans text-[19px] font-medium tracking-wide text-white mb-3 group-hover:text-paz-primary transition-colors">
                 {feature.title}
               </h3>
-              <p className="font-sans text-[13px] text-[#777] leading-[1.65]">
+              <p className="font-sans text-[15px] text-[#aaa] leading-[1.7]">
                 {feature.desc}
               </p>
             </div>

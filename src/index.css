@@ -100,6 +100,1100 @@ h1, h2, h3, h4, h5, h6 {
   animation: livePulse 1.2s infinite;
 }
 
+/* ── Hero filmstrip rows ── */
+@keyframes heroFilmFwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes heroFilmRev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.hero-film-fwd {
+  animation: heroFilmFwd 35s linear infinite;
+}
+
+.hero-film-rev {
+  animation: heroFilmRev 45s linear infinite;
+}
+
+/* Mobile: visible but not competing with text */
+@media (max-width: 640px) {
+  .hero-film-fwd,
+  .hero-film-rev {
+    opacity: 0.55;
+  }
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* ============================================================
+   FLOATING CTA — WhatsApp sticky button
+   ============================================================ */
+
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: floatIn 0.6s 1.5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+.floating-cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(37,211,102,0.50);
+}
+
+.floating-cta-icon { flex-shrink: 0; }
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 640px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .floating-cta-label { display: none; }
+}
+
+/* ============================================================
+   INLINE CTA — Between-section conversion strip
+   ============================================================ */
+
+.inline-cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: rgba(255,107,26,0.06);
+  border: 1px solid rgba(255,107,26,0.15);
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.inline-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.inline-cta-headline {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.90);
+}
+
+.inline-cta-sub {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: rgba(255,255,255,0.40);
+}
+
+.inline-cta-btn {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #FF6B1A 0%, #D42B2B 100%);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.inline-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,107,26,0.40);
+}
+
+@media (max-width: 640px) {
+  .inline-cta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    gap: 1rem;
+    border-radius: 12px;
+  }
+  .inline-cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+  }
+}
+
+/* ============================================================
+   WHY PAZ — Persuasion Section
+   ============================================================ */
+
+.whypaz-section {
+  position: relative;
+  background: #080808;
+  padding: 100px 0 110px;
+  overflow: hidden;
+}
+
+.whypaz-bg-glow {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center,
+    rgba(255,107,26,0.08) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.whypaz-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.whypaz-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.whypaz-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #FF6B1A;
+  margin-bottom: 1rem;
+}
+
+.whypaz-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 80px);
+  line-height: 0.93;
+  color: #ffffff;
+  margin: 0 0 1.25rem;
+}
+
+.whypaz-title-accent {
+  background: linear-gradient(90deg, #FF6B1A 0%, #D42B2B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.whypaz-subtitle {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: rgba(255,255,255,0.50);
+  line-height: 1.75;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Stats grid */
+.whypaz-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,107,26,0.08);
+  border: 1px solid rgba(255,107,26,0.10);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+}
+
+.whypaz-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #080808;
+  transition: background 0.3s ease;
+}
+
+.whypaz-stat:hover { background: rgba(255,107,26,0.04); }
+
+.whypaz-stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 52px);
+  color: #FF6B1A;
+  line-height: 1;
+  margin: 0 0 0.35rem;
+}
+
+.whypaz-stat-suffix { font-size: 0.65em; opacity: 0.8; }
+
+.whypaz-stat-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 0.2rem;
+}
+
+.whypaz-stat-sub {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+/* Versus table */
+.whypaz-versus {
+  border: 1px solid rgba(255,107,26,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.whypaz-versus-header,
+.whypaz-versus-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.whypaz-versus-header {
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,107,26,0.10);
+  padding: 0.9rem 1.5rem;
+}
+
+.whypaz-versus-row {
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.2s ease;
+}
+
+.whypaz-versus-row:last-child { border-bottom: none; }
+.whypaz-versus-row--alt { background: rgba(255,255,255,0.015); }
+.whypaz-versus-row:hover { background: rgba(255,107,26,0.03); }
+
+.whypaz-col-feature {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.60);
+}
+
+.whypaz-col-cable {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: rgba(255,255,255,0.30);
+}
+
+.whypaz-col-paz {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+
+.whypaz-cable-badge {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+
+.whypaz-paz-badge {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #FF6B1A;
+}
+
+.whypaz-x-icon    { color: rgba(255,60,60,0.50); flex-shrink: 0; }
+.whypaz-check-icon{ color: #FF6B1A; flex-shrink: 0; }
+
+.whypaz-nudge {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: rgba(255,255,255,0.40);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.whypaz-nudge strong {
+  color: rgba(255,255,255,0.80);
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .whypaz-section { padding: 70px 0 80px; }
+  .whypaz-stats { grid-template-columns: repeat(2, 1fr); }
+
+  .whypaz-versus-header,
+  .whypaz-versus-row {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .whypaz-col-feature { font-size: 11px; }
+  .whypaz-col-cable, .whypaz-col-paz {
+    font-size: 11px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+  .whypaz-col-cable svg, .whypaz-col-paz svg { display: none; }
+  .whypaz-subtitle { font-size: 14px; }
+}
+
+/* ============================================================
+   DEVICES — Stat Cards Strip
+   ============================================================ */
+
+.devices-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .devices-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Card */
+.devices-stat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.75rem 1.75rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.devices-stat-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 107, 26, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Animated top glow bar */
+.devices-stat-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 107, 26, 0.7) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  transform-origin: left;
+}
+
+.devices-stat-card:hover .devices-stat-bar {
+  opacity: 1;
+}
+
+/* Icon circle */
+.devices-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 107, 26, 0.08);
+  color: #FF6B1A;
+  border: 1px solid rgba(255, 107, 26, 0.15);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.devices-stat-card:hover .devices-stat-icon {
+  background: rgba(255, 107, 26, 0.14);
+  border-color: rgba(255, 107, 26, 0.35);
+}
+
+/* Stat value — big, bold */
+.devices-stat-value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Description */
+.devices-stat-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.40);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .devices-stat-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.25rem;
+  }
+
+  .devices-stat-icon {
+    flex-shrink: 0;
+  }
+
+  .devices-stat-value {
+    font-size: 22px;
+  }
+
+  .devices-stat-label {
+    font-size: 12px;
+  }
+}
+
+/* ============================================================
+   HOW IT WORKS — Step circles
+   ============================================================ */
+
+.how-step-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B1A 0%, #D42B2B 100%);
+  box-shadow:
+    0 0 0 6px rgba(255, 107, 26, 0.10),
+    0 0 24px rgba(255, 107, 26, 0.25);
+  flex-shrink: 0;
+}
+
+.how-step-number {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  /* shift slightly up to optically center Bebas Neue */
+  margin-top: 3px;
+}
+
+/* ============================================================
+   STREAM TICKER — Infinite Marquee (Professional)
+   ============================================================ */
+
+/* ── Section ── */
+.stream-section {
+  position: relative;
+  background: #0e0e0e;
+  border-top:    1px solid rgba(255, 107, 26, 0.10);
+  border-bottom: 1px solid rgba(255, 107, 26, 0.10);
+  padding: 3rem 0 2.75rem;
+  overflow: hidden;
+
+  /* Subtle noise texture overlay for depth */
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,107,26,0.04) 0%, transparent 70%);
+}
+
+/* ── Eyebrow label ── */
+.stream-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  padding: 0 2rem;
+
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.stream-eyebrow-line {
+  display: block;
+  flex: 1;
+  max-width: 140px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,107,26,0.25) 100%);
+}
+
+.stream-eyebrow-line:last-child {
+  background: linear-gradient(270deg, transparent 0%, rgba(255,107,26,0.25) 100%);
+}
+
+/* ── Track wrapper — mask creates the infinite fade ── */
+.stream-track-wrap {
+  overflow: hidden;
+
+  /* Wide masks = deeper, more cinematic fade */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent   0%,
+    black        18%,
+    black        82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent   0%,
+    black        18%,
+    black        82%,
+    transparent 100%
+  );
+}
+
+/* ── Scrolling track ── */
+.stream-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0.9rem 0;
+  gap: 0;
+
+  animation: streamLeft var(--dur, 65s) linear infinite;
+  will-change: transform;
+}
+
+/* Reverse direction */
+.stream-track--rev {
+  animation-name: streamRight;
+}
+
+/* Pause on hover — desktop only, keeps mobile smooth */
+@media (hover: hover) {
+  .stream-track-wrap:hover .stream-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Loop keyframes — translate exactly half (2 copies = 50%) */
+@keyframes streamLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes streamRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── Each list item ── */
+.stream-track-item {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Individual channel item ── */
+.stream-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0 0.25rem;
+  cursor: default;
+  white-space: nowrap;
+  transition: opacity 0.4s ease;
+}
+
+@media (hover: hover) {
+  .stream-track-wrap:hover .stream-item:not(:hover) {
+    opacity: 0.35;
+  }
+
+  .stream-item:hover .stream-label {
+    color: #ffffff;
+  }
+
+  .stream-item:hover .stream-dot {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+/* ── Colored identity dot ── */
+.stream-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--item-color, #FF6B1A);
+  opacity: 0.55;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ── Channel name ── */
+.stream-label {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.80);
+  transition: color 0.35s ease;
+}
+
+/* ── Separator bullet between items ── */
+.stream-sep {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 1.5rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* ── Middle divider ── */
+.stream-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  margin: 0.35rem 0;
+}
+
+.stream-divider span:first-child,
+.stream-divider span:last-child {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 107, 26, 0.12) 100%
+  );
+}
+
+.stream-divider span:last-child {
+  background: linear-gradient(270deg,
+    transparent 0%,
+    rgba(255, 107, 26, 0.12) 100%
+  );
+}
+
+.stream-divider-label {
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(255, 107, 26, 0.30);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .stream-section {
+    padding: 2.25rem 0 2rem;
+  }
+
+  .stream-eyebrow {
+    font-size: 8px;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+
+  .stream-eyebrow-line {
+    max-width: 70px;
+  }
+
+  .stream-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .stream-dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .stream-sep {
+    margin: 0 1rem;
+    height: 10px;
+  }
+
+  .stream-divider-label {
+    font-size: 7px;
+    letter-spacing: 2.5px;
+  }
+
+  /* Mask very small on narrow screens — show most content */
+  .stream-track-wrap {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent  0%,
+      black         5%,
+      black        95%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent  0%,
+      black         5%,
+      black        95%,
+      transparent 100%
+    );
+  }
+}
+
+/* ============================================================
+   WHATSAPP PHONE MOCK — Pixel-perfect dark mode (v2)
+   Ref: WhatsApp Android dark mode, build ~2024
+   BG: #0B141A  |  Header/Input: #202C33
+   Bubble-in: #202C33  |  Bubble-out: #005C4B
+   Text: #E9EDEF  |  Sub/Time: #8696A0  |  Ticks: #53BDEB
+   ============================================================ */
+
+.wa-scroll-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 4px 4px 16px;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.wa-scroll-track::-webkit-scrollbar { display: none; }
+
+/* ── Phone shell ── */
+.wa-phone {
+  flex-shrink: 0;
+  width: 295px;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #111B21;
+  display: flex;
+  flex-direction: column;
+  /* Subtle outer device bezel */
+  box-shadow:
+    0 0 0 2px #1a2530,
+    0 0 0 3px rgba(255,255,255,0.06),
+    0 24px 60px rgba(0,0,0,0.70),
+    0 8px 20px rgba(0,0,0,0.40);
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* ── Status bar (system UI) ── */
+.wa-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #202C33;
+  padding: 8px 18px 5px;
+  min-height: 28px;
+}
+.wa-time-status {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+}
+.wa-statusbar-icons { display: flex; align-items: center; gap: 5px; }
+
+/* ── Header bar ── */
+.wa-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #202C33;
+  padding: 6px 16px 8px 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+/* Back arrow + mini-avatar indicator */
+.wa-back {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  color: #E9EDEF;
+  padding-right: 2px;
+}
+.wa-back svg { stroke: #E9EDEF; stroke-width: 2.5; fill: none; }
+/* The tiny unread dot next to the back arrow */
+.wa-back-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(233,238,239,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Contact avatar */
+.wa-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+  letter-spacing: 0;
+}
+.wa-header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  gap: 1px;
+}
+.wa-contact-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #E9EDEF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.25;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+  letter-spacing: -0.1px;
+}
+.wa-contact-status {
+  font-size: 12px;
+  color: #8696A0;
+  line-height: 1.2;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+}
+.wa-header-actions { display: flex; align-items: center; gap: 22px; flex-shrink: 0; }
+
+/* ── Chat wallpaper background ── */
+.wa-chat-bg {
+  flex: 1;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 8px 6px;
+  background-color: #0B141A;
+  /* Subtle WhatsApp wallpaper texture hint */
+  background-image: radial-gradient(ellipse 120% 80% at 50% 40%, rgba(255,255,255,0.012) 0%, transparent 70%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── "Hoje" date chip ── */
+.wa-date-chip {
+  align-self: center;
+  background: #182229;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #8696A0;
+  padding: 3px 12px;
+  margin-bottom: 3px;
+  margin-top: 2px;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+/* ── End-to-end encryption notice ── */
+.wa-e2e-notice {
+  align-self: center;
+  background: #182229;
+  border-radius: 7px;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: #8696A0;
+  text-align: center;
+  padding: 5px 12px;
+  line-height: 1.45;
+  max-width: 88%;
+  margin-bottom: 4px;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.20);
+}
+
+/* ── Message bubbles ── */
+.wa-bubble-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 1px;
+}
+.wa-bubble-wrap--out { align-items: flex-end; }
+
+.wa-bubble {
+  position: relative;
+  max-width: 80%;
+  padding: 6px 9px 5px;
+  border-radius: 7.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Incoming bubble */
+.wa-bubble--in {
+  background: #202C33;
+  border-top-left-radius: 2px;
+}
+/* Outgoing bubble */
+.wa-bubble--out {
+  background: #005C4B;
+  border-top-right-radius: 2px;
+}
+
+/* Bubble tails — SVG path approach matching WA exactly */
+.wa-tail {
+  position: absolute;
+  top: 0;
+  width: 9px;
+  height: 13px;
+  overflow: visible;
+}
+.wa-tail--in {
+  left: -9px;
+}
+.wa-tail--out {
+  right: -9px;
+  transform: scaleX(-1);
+}
+.wa-tail--in svg path  { fill: #202C33; }
+.wa-tail--out svg path { fill: #005C4B; }
+
+/* Bubble text */
+.wa-bubble-text {
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #E9EDEF;
+  line-height: 1.46;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Meta row (time + ticks) */
+.wa-bubble-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  margin-top: 2px;
+  /* Float to bottom-right like real WA */
+  align-self: flex-end;
+  margin-left: 6px;
+}
+.wa-bubble-time {
+  font-size: 10.5px;
+  color: #8696A0;
+  white-space: nowrap;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+  font-weight: 400;
+}
+
+/* ── Input bar ── */
+.wa-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #202C33;
+  padding: 8px 8px 10px;
+  border-top: 1px solid rgba(0,0,0,0.20);
+}
+/* Input pill */
+.wa-input-field {
+  flex: 1;
+  background: #2A3942;
+  border-radius: 24px;
+  height: 40px;
+  padding: 0 46px 0 14px;
+  font-size: 13px;
+  color: #8696A0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-family: -apple-system, 'SF Pro Text', 'Segoe UI', sans-serif;
+}
+/* Mic/Send button */
+.wa-mic-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #00A884;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,168,132,0.35);
+}
+
+@media (max-width: 640px) {
+  .wa-phone { width: 260px; border-radius: 28px; }
+  .wa-contact-name { font-size: 14px; }
+  .wa-bubble-text { font-size: 12.5px; }
+  .wa-scroll-track { gap: 14px; }
+  .wa-chat-bg { min-height: 210px; }
 }

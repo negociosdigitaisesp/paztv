@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Tv, Play } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export const WHATSAPP_LINK = "https://wa.me/5588999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20testar%20a%20Paz%20TV%20gratuitamente%20%F0%9F%8E%AC";
 
@@ -25,12 +25,12 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-5 h-full flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="relative flex items-center justify-center w-8 h-8 rounded bg-gradient-to-br from-paz-primary to-paz-secondary text-white">
-            <Tv size={18} />
-            <Play size={8} className="absolute fill-white" />
-          </div>
-          <span className="font-display text-2xl tracking-wider text-white">PAZ TV</span>
+        <a href="#" className="flex items-center">
+          <img
+            src="/logo.svg"
+            alt="Paz TV"
+            className="h-9 w-auto"
+          />
         </a>
 
         {/* Desktop Nav */}
