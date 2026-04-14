@@ -20,7 +20,7 @@ export function Footer() {
               Servidor estável 24h para toda a família.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-paz-primary hover:text-white transition-colors">
+              <a href="https://instagram.com/paztvstreaming" target="_blank" rel="noopener noreferrer" className="text-paz-primary hover:text-white transition-colors">
                 <Instagram size={20} />
               </a>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-paz-primary hover:text-white transition-colors">
@@ -50,10 +50,10 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               <li className="font-sans text-[14px] text-[#999]">
-                <span className="text-white font-semibold">WhatsApp:</span> (88) 99999-9999
+                <span className="text-white font-semibold">WhatsApp:</span> (88) 99495-5234
               </li>
               <li className="font-sans text-[14px] text-[#999]">
-                <span className="text-white font-semibold">Instagram:</span> @paztv
+                <span className="text-white font-semibold">Instagram:</span> @paztvstreaming
               </li>
               <li className="font-sans text-[14px] text-[#999]">
                 <span className="text-white font-semibold">Horário:</span> Seg–Dom, 08h–22h

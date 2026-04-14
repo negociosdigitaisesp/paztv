@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export const WHATSAPP_LINK = "https://wa.me/5588999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20testar%20a%20Paz%20TV%20gratuitamente%20%F0%9F%8E%AC";
+export const WHATSAPP_LINK = "https://api.whatsapp.com/send?phone=5588994955234";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);

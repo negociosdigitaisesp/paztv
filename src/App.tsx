@@ -11,8 +11,19 @@ import { FAQ } from './components/FAQ';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 import { FloatingCTA, InlineCTA } from './components/CTAComponents';
+import { LinkTree } from './components/LinkTree';
+
+// Simple path-based routing (no react-router needed)
+const path = window.location.pathname;
+const isLinkTree = path === '/links' || path === '/links/';
 
 export default function App() {
+  // ── LinkTree page ──────────────────────────────────────────────
+  if (isLinkTree) {
+    return <LinkTree />;
+  }
+
+  // ── Main landing page ──────────────────────────────────────────
   return (
     <div className="min-h-screen bg-paz-bg text-paz-text font-sans selection:bg-paz-primary selection:text-white">
       <Header />
@@ -62,4 +73,3 @@ export default function App() {
     </div>
   );
 }
-

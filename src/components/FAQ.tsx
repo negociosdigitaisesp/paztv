@@ -7,6 +7,10 @@ const faqs = [
     a: "Você solicita via WhatsApp, enviamos login e senha para testar. Sem cobrança, sem cartão de crédito."
   },
   {
+    q: "O que está incluído no plano de R$25?",
+    a: "Tudo! Canais ao vivo, filmes, séries, novelas, doramas, esportes e muito mais — sem limite de conteúdo."
+  },
+  {
     q: "Em quantos aparelhos posso usar?",
     a: "1 login para até 3 dispositivos instalados, usando 1 por vez."
   },
@@ -32,15 +36,11 @@ const faqs = [
   },
   {
     q: "Posso cancelar quando quiser?",
-    a: "Sim, sem fidelidade. O plano é pré-pago e não renova automaticamente."
+    a: "Sim, sem fidelidade. O plano é pré-pago mensal e não renova automaticamente."
   },
   {
     q: "Tem suporte em caso de problemas?",
     a: "Sim! Suporte via WhatsApp disponível todos os dias."
-  },
-  {
-    q: "Doramas e novelas estão disponíveis?",
-    a: "Sim! Amplo catálogo de doramas coreanos, japoneses e novelas brasileiras."
   }
 ];
 

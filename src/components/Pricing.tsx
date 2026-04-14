@@ -1,43 +1,17 @@
-import { Check, Lock } from 'lucide-react';
+import { Check, Lock, Star } from 'lucide-react';
 import { WHATSAPP_LINK } from './Header';
 
-const plans = [
-  {
-    tag: "PLANO ESSENCIAL",
-    name: "Básico",
-    desc: "Tudo que você precisa pra sair da TV a cabo de uma vez por todas.",
-    oldPrice: "60",
-    price: "25,00",
-    features: [
-      "Canais abertos e fechados ao vivo",
-      "Filmes sempre atualizados",
-      "Séries atualizadas",
-      "Funciona no celular, tablet e Smart TV",
-      "1 login — instala em até 3 aparelhos"
-    ],
-    footer: "Acesso imediato após confirmação",
-    cta: "QUERO ESSE PLANO",
-    popular: false
-  },
-  {
-    tag: "🔥 MAIS POPULAR",
-    name: "Completo",
-    desc: "Para quem não quer perder nada — nem novela, nem dorama, nem série nova.",
-    oldPrice: "90",
-    price: "30,00",
-    features: [
-      "Canais abertos e fechados ao vivo",
-      "Filmes sempre atualizados",
-      "Séries atualizadas",
-      "Novelas completas 📺",
-      "Doramas legendados 🇰🇷",
-      "Funciona no celular, tablet e Smart TV",
-      "1 login — instala em até 3 aparelhos"
-    ],
-    footer: "Acesso imediato após confirmação",
-    cta: "QUERO O PLANO COMPLETO",
-    popular: true
-  }
+const features = [
+  "Canais abertos e fechados ao vivo 📡",
+  "Filmes sempre atualizados",
+  "Séries atualizadas",
+  "Novelas completas 📺",
+  "Doramas legendados 🇰🇷",
+  "Esportes ao vivo (futebol, UFC, NBA, F1) ⚽",
+  "Funciona no celular, tablet e Smart TV",
+  "1 login — instala em até 3 aparelhos",
+  "Qualidade HD, Full HD e 4K",
+  "Suporte via WhatsApp todos os dias",
 ];
 
 export function Pricing() {
@@ -49,16 +23,16 @@ export function Pricing() {
       {/* Top Dark Shape */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] md:w-[120%] h-[150px] md:h-[250px] bg-[#0A0A0A] rounded-b-[50%] shadow-[0_20px_60px_rgba(255,107,26,0.2)] z-0"></div>
 
-      {/* Bottom Dark Shape (Background for Cards) */}
+      {/* Bottom Dark Shape */}
       <div className="absolute top-[350px] md:top-[450px] bottom-0 left-1/2 -translate-x-1/2 w-[200%] md:w-[120%] bg-[#111111] rounded-t-[50%] shadow-[0_-20px_60px_rgba(255,107,26,0.2)] z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 pt-[60px] md:pt-[80px]">
-        <div className="text-center mb-24">
+        <div className="text-center mb-16">
           <span className="font-sans text-[11px] uppercase tracking-[2px] text-paz-primary font-bold block mb-2">
-            PLANOS
+            PLANO ÚNICO
           </span>
-          <h2 className="font-display text-[56px] leading-none text-white mb-8">
-            ESCOLHA O SEU PLANO
+          <h2 className="font-display text-[52px] leading-none text-white mb-8">
+            TUDO POR R$25/MÊS
           </h2>
 
           {/* Urgency Banner */}
@@ -69,78 +43,60 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {plans.map((plan, idx) => (
-            <div 
-              key={idx}
-              className={`relative rounded-[14px] p-8 flex flex-col ${
-                plan.popular 
-                  ? 'border-2 border-paz-primary bg-gradient-to-br from-[rgba(255,107,26,0.07)] to-[#111111] scale-105 z-10 shadow-[0_0_30px_rgba(255,107,26,0.15)]' 
-                  : 'border border-[rgba(255,107,26,0.15)] bg-[#111111]'
-              }`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-paz-primary to-paz-secondary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
-                  {plan.tag}
-                </div>
-              )}
-              {!plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1A1A1A] border border-[rgba(255,107,26,0.3)] text-paz-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
-                  {plan.tag}
-                </div>
-              )}
+        {/* Single Plan Card */}
+        <div className="max-w-lg mx-auto">
+          <div className="relative rounded-[20px] p-10 flex flex-col border-2 border-paz-primary bg-gradient-to-br from-[rgba(255,107,26,0.07)] to-[#111111] shadow-[0_0_60px_rgba(255,107,26,0.2)]">
 
-              <div className="mb-6 text-center">
-                <h3 className="font-display text-4xl text-white mb-3">{plan.name}</h3>
-                <p className="font-sans text-[13px] text-[#999] min-h-[40px] leading-relaxed">
-                  {plan.desc}
-                </p>
-              </div>
-
-              <div className="mb-6 text-center">
-                <div className="font-sans text-[13px] text-[#777] line-through mb-1">
-                  De R$ {plan.oldPrice}
-                </div>
-                <div className="flex items-end justify-center gap-1">
-                  <span className="font-sans text-sm font-bold text-paz-muted mb-2">R$</span>
-                  <span className="font-display text-[56px] leading-none text-white">{plan.price}</span>
-                  <span className="font-sans text-sm text-[#777] mb-2">/mês</span>
-                </div>
-              </div>
-
-              <div className="h-[1px] w-full bg-[rgba(255,107,26,0.12)] mb-6"></div>
-
-              <ul className="flex flex-col gap-4 mb-8 flex-grow">
-                {plan.features.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check size={18} className="text-paz-primary shrink-0 mt-0.5" />
-                    <span className="font-sans text-[13px] text-paz-text">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a 
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-full py-3.5 rounded-lg font-sans text-sm font-bold text-center transition-all mb-4 ${
-                  plan.popular
-                    ? 'bg-gradient-to-r from-paz-primary to-paz-secondary text-white hover:shadow-[0_8px_20px_rgba(255,107,26,0.3)] hover:-translate-y-0.5'
-                    : 'bg-transparent border border-paz-primary text-paz-primary hover:bg-[rgba(255,107,26,0.1)]'
-                }`}
-              >
-                {plan.cta}
-              </a>
-              
-              <div className="flex items-center justify-center gap-1.5 text-[#555] text-[11px] font-semibold">
-                <Lock size={12} />
-                {plan.footer}
-              </div>
+            {/* Badge */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-paz-primary to-paz-secondary text-white text-[11px] font-bold px-5 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap flex items-center gap-1.5">
+              <Star size={12} fill="white" />
+              ACESSO COMPLETO
+              <Star size={12} fill="white" />
             </div>
-          ))}
+
+            {/* Price */}
+            <div className="mb-8 text-center">
+              <div className="font-sans text-[13px] text-[#777] line-through mb-1">De R$ 90,00/mês</div>
+              <div className="flex items-end justify-center gap-1 mb-1">
+                <span className="font-sans text-base font-bold text-paz-muted mb-3">R$</span>
+                <span className="font-display text-[80px] leading-none text-white">25</span>
+                <span className="font-sans text-base text-[#777] mb-3">,00/mês</span>
+              </div>
+              <p className="font-sans text-[13px] text-[#999] mt-2">
+                Sem fidelidade • Cancele quando quiser
+              </p>
+            </div>
+
+            <div className="h-[1px] w-full bg-[rgba(255,107,26,0.15)] mb-8"></div>
+
+            {/* Features */}
+            <ul className="flex flex-col gap-4 mb-10">
+              {features.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Check size={18} className="text-paz-primary shrink-0 mt-0.5" />
+                  <span className="font-sans text-[14px] text-paz-text">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA Button */}
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-4 rounded-xl font-sans text-[15px] font-bold text-center text-white bg-gradient-to-r from-paz-primary to-paz-secondary hover:shadow-[0_12px_30px_rgba(255,107,26,0.35)] hover:-translate-y-0.5 transition-all duration-200 mb-5 block"
+            >
+              QUERO ACESSO AGORA →
+            </a>
+
+            <div className="flex items-center justify-center gap-1.5 text-[#555] text-[11px] font-semibold">
+              <Lock size={12} />
+              Acesso imediato após confirmação
+            </div>
+          </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-10">
           <p className="font-sans text-sm text-[#777]">
             Todos os planos incluem 6 horas de teste gratuito antes da ativação
           </p>
